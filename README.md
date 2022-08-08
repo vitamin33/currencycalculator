@@ -23,6 +23,7 @@ Simple application allowing to convert amount in one currency to another, using 
 - Data (for database, API code)
 - Domain (for business logic and models)
 - Presentation (for UI logic, with MVI)
+Architecture designed to be maintainable testable and easy to support for big projects and future growth of the project.
 
  <img src="images/AndroidTemplate-CleanArchitecture.png" alt="ArchiTecture logo"/>
 
