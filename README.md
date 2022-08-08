@@ -3,8 +3,8 @@ Currency calculator.
 Simple application allowing to convert amount in one currency to another, using exchange rate of a given date.    
 
 ## Scenarios  
-Scenario 1: “User enters the application, chooses the date, original currency, the amount in original currency and the target currency. The amount in the target currency should be shown (and stored in the history, see Scenario 2).” 
-Scenario 2: “User enters the application, opens the history page and can see last 10 operations they performed.”  
+- Scenario 1: “User enters the application, chooses the date, original currency, the amount in original currency and the target currency. The amount in the target currency should be shown (and stored in the history, see Scenario 2).” 
+- Scenario 2: “User enters the application, opens the history page and can see last 10 operations they performed.”  
 
 ## Technologies:
 - Google [Jetpack Compose](https://developer.android.com/jetpack/compose) dev kit
