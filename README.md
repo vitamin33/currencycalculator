@@ -48,7 +48,8 @@ Architecture designed to be maintainable testable and easy to support for big pr
 ### Manual build
 1. Download this repository extract and open folder on Android Studio
 2. Wait for indexing and libraries downloading
-3. Click on 'Run' app button
+3. Click on 'Run' app button or you can use console command  ```./gradlew assembleDebug ```
+
 
 Also you can just download .apk build in 'build' folder and install.
 
