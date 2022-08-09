@@ -7,6 +7,9 @@ Simple application allowing to convert amount in one currency to another, using 
 - Add more unit and instrumentation tests (at least for all MVI events)
 - clean up code(fix formatting, remove unused imports etc.)
 
+<img src="Screenshot_20220809_102131.png" width="250">    <img src="Screenshot_20220809_102212.png" width="250">
+
+
 ## Scenarios  
 - Scenario 1: “User enters the application, chooses the date, original currency, the amount in original currency and the target currency. The amount in the target currency should be shown (and stored in the history, see Scenario 2).” 
 - Scenario 2: “User enters the application, opens the history page and can see last 10 operations they performed.”  
