@@ -2,7 +2,7 @@
 Currency calculator. 
 Simple application allowing to convert amount in one currency to another, using exchange rate of a given date.
 
-##TODO
+## TODO
 - Needed to implement better error handling in different places of the app and show error messages to the user.
 - Add more unit and instrumentation tests (at least for all MVI events)
 - clean up code(fix formatting, remove unused imports etc.)
