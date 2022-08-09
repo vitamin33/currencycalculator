@@ -1,6 +1,11 @@
 # currencycalculator
 Currency calculator. 
-Simple application allowing to convert amount in one currency to another, using exchange rate of a given date.    
+Simple application allowing to convert amount in one currency to another, using exchange rate of a given date.
+
+##TODO
+- Needed to implement better error handling in different places of the app and show error messages to the user.
+- Add more unit and instrumentation tests (at least for all MVI events)
+- clean up code(fix formatting, remove unused imports etc.)
 
 ## Scenarios  
 - Scenario 1: “User enters the application, chooses the date, original currency, the amount in original currency and the target currency. The amount in the target currency should be shown (and stored in the history, see Scenario 2).” 
