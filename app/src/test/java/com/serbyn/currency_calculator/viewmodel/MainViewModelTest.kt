@@ -13,7 +13,6 @@ import io.mockk.mockk
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
@@ -47,15 +46,15 @@ class MainViewModelTest {
     private lateinit var formatDateFromPickerUseCase: FormatDateFromPickerUseCase
 
     @Mock
+    private lateinit var formatEnteredInitValueUseCase: FormatEnteredInitValueUseCase
+
+    @Mock
     private lateinit var convertHistoryMapper: ConvertHistoryToPresenterMapper
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
     }
-
-    private val testDispatcher = StandardTestDispatcher()
-
 
     @Test
     fun `When view model initialized then should emit initial view state first`() = runTest {
@@ -79,6 +78,7 @@ class MainViewModelTest {
             saveConvertHistoryUseCase,
             loadConvertHistoryUseCase,
             formatDateFromPickerUseCase,
+            formatEnteredInitValueUseCase,
             convertHistoryMapper
         )
 
@@ -128,6 +128,7 @@ class MainViewModelTest {
             saveConvertHistoryUseCase,
             loadConvertHistoryUseCase,
             formatDateFromPickerUseCase,
+            formatEnteredInitValueUseCase,
             convertHistoryMapper
         )
         viewModel.sendEvent(MainContract.Event.LoadInitialCurrencies(null))

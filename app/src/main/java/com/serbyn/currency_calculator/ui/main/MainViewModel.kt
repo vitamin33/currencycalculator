@@ -20,6 +20,7 @@ class MainViewModel @Inject constructor(
     private val saveConvertHistoryUseCase: SaveConvertHistoryUseCase,
     private val loadConvertHistoryUseCase: LoadConvertHistoryUseCase,
     private val formatDateFromPickerUseCase: FormatDateFromPickerUseCase,
+    private val formatEnteredInitValueUseCase: FormatEnteredInitValueUseCase,
     private val convertHistoryMapper: ConvertHistoryToPresenterMapper
 ) : BaseViewModel<Event, State, Effect>() {
 
@@ -43,7 +44,9 @@ class MainViewModel @Inject constructor(
             }
             is Event.ToggleCurrencyPicker -> sendEffect(Effect.ToggleCurrencyPicker(event.isFirstCurrency))
             Event.CloseCurrencyPicker -> sendEffect(Effect.CloseCurrencyPicker)
-            is Event.EnterInitValue -> setState { copy(enteredValue = event.value) }
+            is Event.EnterInitValue -> setState {
+                copy(enteredValue = event.value)
+            }
             is Event.PickCurrency -> {
                 if (event.isInitCurrency) {
                     setState { copy(firstCurrency = event.currency) }
@@ -60,15 +63,15 @@ class MainViewModel @Inject constructor(
             val resultValue = convertCurrencyUseCase(
                 currentState.firstCurrency.toDomain(),
                 currentState.secondCurrency.toDomain(),
-                event.enteredValue.toFloat()
+                event.enteredValue
             )
             setState { copy(resultValue = resultValue) }
 
             saveConvertHistoryUseCase(
                 currentState.firstCurrency.toDomain(),
                 currentState.secondCurrency.toDomain(),
-                event.enteredValue.toFloat(),
-                resultValue.toFloat()
+                event.enteredValue,
+                resultValue
             )
         }
     }
